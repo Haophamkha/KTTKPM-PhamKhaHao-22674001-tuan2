@@ -1,0 +1,17 @@
+package org.example;
+
+public class ShapeFactory {
+
+    public static Shape createShape(String type) {
+
+        if(type.equalsIgnoreCase("circle")) {
+            return new Circle();
+        }
+
+        if(type.equalsIgnoreCase("rectangle")) {
+            return new Rectangle();
+        }
+
+        return null;
+    }
+}
