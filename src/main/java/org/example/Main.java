@@ -22,5 +22,11 @@ public class Main {
 
         Shape shape2 = ShapeFactory.createShape("rectangle");
         shape2.draw();
+
+        //State
+
+        //Strategy
+
+        //Decorator
     }
 }
