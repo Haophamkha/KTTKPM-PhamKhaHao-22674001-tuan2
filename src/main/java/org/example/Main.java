@@ -1,15 +1,19 @@
 package org.example;
 
+import org.example.FactoryPattern.Shape;
+import org.example.FactoryPattern.ShapeFactory;
+import org.example.SingletonPattern.People;
+
 public class Main {
     public static void main(String[] args) {
 
         //Singleton
-        Logger log1 = Logger.getInstance();
-        Logger log2 = Logger.getInstance();
+        People p1 = People.getInstance();
+        People p2 = People.getInstance();
 
-        log1.log("Start program");
+        p1.log("Bắt đầu");
 
-        System.out.println(log1 == log2);
+        System.out.println(p1 == p2);
 
         //Factory
 

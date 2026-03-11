@@ -1,4 +1,4 @@
-package org.example;
+package org.example.FactoryPattern;
 
 public class Circle implements Shape {
 

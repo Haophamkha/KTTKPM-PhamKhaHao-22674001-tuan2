@@ -1,4 +1,8 @@
-package org.example;
+package org.example.FactoryPattern;
+
+import org.example.FactoryPattern.Circle;
+import org.example.FactoryPattern.Rectangle;
+import org.example.FactoryPattern.Shape;
 
 public class ShapeFactory {
 
