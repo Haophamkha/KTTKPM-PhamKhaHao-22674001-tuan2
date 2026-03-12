@@ -1,8 +1,14 @@
 package org.example;
 
+import org.example.DecoratorPattern.CreditCardPayment;
+import org.example.DecoratorPattern.Discount;
+import org.example.DecoratorPattern.Payment;
+import org.example.DecoratorPattern.ProcessingFee;
 import org.example.FactoryPattern.Shape;
 import org.example.FactoryPattern.ShapeFactory;
 import org.example.SingletonPattern.People;
+import org.example.StatePattern.*;
+import org.example.StrategyPattern.VatTax;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,10 +29,28 @@ public class Main {
         Shape shape2 = ShapeFactory.createShape("rectangle");
         shape2.draw();
 
-        //State
+        Order order = new Order();
 
-        //Strategy
+        // State
+        order.setState(new NewState());
+        order.process();
 
-        //Decorator
+        order.setState(new ProcessingState());
+        order.process();
+
+        // Strategy
+        order.setTaxStrategy(new VatTax());
+        double price = order.calculatePrice(1000);
+
+        System.out.println("Giá sau thuế: " + price);
+
+        // Decorator
+        Payment payment = new CreditCardPayment();
+        payment = new ProcessingFee(payment);
+        payment = new Discount(payment);
+
+        double finalPrice = payment.pay(price);
+
+        System.out.println("Thanh toán cuối: " + finalPrice);
     }
 }
