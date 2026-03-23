@@ -21,6 +21,8 @@ public class Order {
     }
 
     public void process() {
-        state.handle();
+        if (state != null) {
+            state.handle(this);
+        }
     }
 }

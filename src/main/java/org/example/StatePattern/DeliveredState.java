@@ -1,8 +1,12 @@
 package org.example.StatePattern;
 
+import org.example.Order;
+
 public class DeliveredState implements OrderState {
 
-    public void handle() {
+    @Override
+    public void handle(Order order) {
         System.out.println("Đã giao hàng");
+
     }
 }
